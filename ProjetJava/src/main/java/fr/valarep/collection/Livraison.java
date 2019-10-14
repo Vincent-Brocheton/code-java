@@ -30,6 +30,10 @@ public class Livraison {
 
     public void preparer(){
         Collections.sort(produits);
+        int indexDuPremierGros = trouverLindexDuPremierGros();
+
+        produitsCamionette = produits.subList(0, indexDuPremierGros);
+        produitsCamion = produits.subList(indexDuPremierGros, produits.size());
         //for (Produit produit : produits) {
        //     if(produit.getPoids() > CAMIONETTE_POIDS_MAX){
         //        produitsCamion.add(produit);
@@ -39,7 +43,11 @@ public class Livraison {
         //}
     }
 
-	public List<Produit> getProduitsCamionette() {
+	private int trouverLindexDuPremierGros() {
+        return 0;
+    }
+
+    public List<Produit> getProduitsCamionette() {
 		return null;
 	}
 
