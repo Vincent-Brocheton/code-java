@@ -35,7 +35,7 @@ public class Livraison {
         produitsCamionette = produits.subList(0, indexDuPremierGros);
         produitsCamion = produits.subList(indexDuPremierGros, produits.size());
         //for (Produit produit : produits) {
-       //     if(produit.getPoids() > CAMIONETTE_POIDS_MAX){
+        //    if(produit.getPoids() > CAMIONETTE_POIDS_MAX){
         //        produitsCamion.add(produit);
         //    } else {
         //        produitsCamionette.add(produit);
@@ -44,15 +44,27 @@ public class Livraison {
     }
 
 	private int trouverLindexDuPremierGros() {
+        //int index = 0
+        //for (Produit produit : produits) {
+        //    if(produit.getPoids()>CAMIONETTE_POIDS_MAX){
+         //       return index;
+        //    }
+        //    index ++;
+        //}
+        for (int i = 0; i < produits.size(); i++) {
+            if (produits.get(i).getPoids() > CAMIONETTE_POIDS_MAX){
+                return i;
+            }
+        }
         return 0;
     }
 
     public List<Produit> getProduitsCamionette() {
-		return null;
+		return produitsCamionette;
 	}
 
 	public List<Produit> getProduitsCamion() {
-		return null;
+		return produitsCamion;
 	}
 
 }
